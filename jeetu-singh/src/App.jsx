@@ -4,10 +4,17 @@
 */
 // --> Components
 import Header from './components/header';
+import Hero from './components/Hero';
+import About from './components/About';
 
 const App = () => {
     return (
+        <>
         <Header />
+        <main>
+            <Hero />
+        </main>
+        </>
     )
 }
 
