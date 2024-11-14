@@ -13,6 +13,7 @@ const App = () => {
         <Header />
         <main>
             <Hero />
+            <About />
         </main>
         </>
     )
