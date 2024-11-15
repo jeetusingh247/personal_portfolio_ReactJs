@@ -23,6 +23,16 @@ const skillItem = [
     desc: 'Interaction'
   },
   {
+    imgSrc: '/images/bootstrap.svg',
+    label: 'Bootstrap',
+    desc: 'Style Framework'
+  },
+  {
+    imgSrc: '/images/dart.svg',
+    label: 'Dart',
+    desc: 'Programming Language'
+  },
+  {
     imgSrc: '/images/nodejs.svg',
     label: 'NodeJS',
     desc: 'Web Server'
@@ -48,6 +58,11 @@ const skillItem = [
     desc: 'Framework'
   },
   {
+    imgSrc: '/images/flutter.svg',
+    label: 'Flutter',
+    desc: 'Framework'
+  },
+  {
     imgSrc: '/images/tailwindcss.svg',
     label: 'TailwindCSS',
     desc: 'User Interface'
@@ -64,10 +79,10 @@ const Skill = () => {
         <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch]">
           Explore the powerful tools and technologies I leverage to create high-performance, user-friendly, and scalable full-stack web and mobile applications.
         </p>
-        <div className="">
+        <div className="grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]">
           {
             skillItem.map(({ imgSrc, label, desc }, key) => (
-              <SkillCard imgSrc={imgSrc} label={label} desc={desc} />
+              <SkillCard  key={key} imgSrc={imgSrc} label={label} desc={desc} />
             ))
           }
         </div>
