@@ -54,8 +54,8 @@ return (
             </h2>
 
             <div className="">
-                {works.map(({ imgSrc, title, tags, projectLink }, index) => (
-                    <ProjectCard />
+                {works.map(({ imgSrc, title, tags, projectLink }, key) => (
+                    <ProjectCard key={key} imgSrc={imgSrc} title={title} tags={tags} projectLink={projectLink}/>
                 ))}
             </div>
         </div>
