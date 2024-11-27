@@ -18,7 +18,10 @@ const About = () => {
   return (
     <section id="about" className="section">
       <div className="container">
-        <div className="bg-zinc-800/50 p-7 rounded-2xl md:p-12">
+          <h2 className="headline-2">
+            About Me
+          </h2>
+        <div className="bg-zinc-800/50 mt-8 p-7 rounded-2xl md:p-12">
           <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl md:max-w-[60ch]">
             Enter you welcome intro hereLorem ipsum dolor sit amet consectetur adipisicing elit. Rem, magnam a. Blanditiis repellendus ex perferendis. Dolorum voluptate velit sequi nobis dignissimos sapiente iste dicta neque ad commodi saepe magnam fuga tenetur aliquid, accusantium sed cum illum quam ipsa eveniet amet sint. Quas quia et hic perferendis consequuntur quaerat veniam modi.
           </p>

@@ -52,9 +52,9 @@ const Review = () => {
           <h2 className="headline-2">
             What Our Customers Say
           </h2>
-          <div className="">
+          <div className="mt-8">
             {reviews.map(({content, name, imgSrc, company}, key) => (
-              <ReviewCard key={key} name={name} imgSrc={imgSrc} company={company} content={company} />
+              <ReviewCard key={key} name={name} imgSrc={imgSrc} company={company} content={content} />
             ))}
           </div>
         </div>
