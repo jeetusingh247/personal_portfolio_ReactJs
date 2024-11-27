@@ -53,7 +53,9 @@ const Review = () => {
             What Our Customers Say
           </h2>
           <div className="">
-
+            {reviews.map(({content, name, imgSrc, company}, key) => (
+              <ReviewCard key={key} name={name} imgSrc={imgSrc} company={company} content={company} />
+            ))}
           </div>
         </div>
     </section>
