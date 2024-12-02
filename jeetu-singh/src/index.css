@@ -122,3 +122,9 @@ body {
 .btn-outline  {
     @apply h-11 bg-zinc-800 hover:bg-zinc-700 active:bg-zinc-800
 }
+
+/* Text Field */
+
+.label {
+    @apply 
+}
