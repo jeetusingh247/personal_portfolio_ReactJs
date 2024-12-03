@@ -54,36 +54,34 @@ const Contact = () => {
                 </div>
             </div>
 
-            <form action="" method="POST" className="xl:pl-10 2xl:pl-20">
+            <form action="https://getform.io/f/bgddnnya" method="POST" className="xl:pl-10 2xl:pl-20">
                 <div className="md:grid md:items-center md:grid-cols-2 md:gap-2">
-                    <div className="mb-4">
+                    <div className="mb-3">
                         <label htmlFor="name" className="label">
                             Name
                         </label>
-                        <input type="text" name="name" id="name" autoComplete="name" required placeholder="Jeetu Singh" className="text-field" />
+                        <input type="text" name="name" id="name" autoComplete="name" required placeholder="Full Name" className="text-field" />
                     </div>
 
-                    <div className="">
+                    <div className="mb-3">
                         <label htmlFor="email" className="label">
                             Email
                         </label>
-                        <input type="email" name="email" id="email" autoComplete="email" required placeholder="jeetusingh@example.com" className="text-field" />
+                        <input type="email" name="email" id="email" autoComplete="email" required placeholder="email@example.com" className="text-field" />
                     </div>
-
-
 
                 </div>
 
                 <div className="">
-                    <label htmlFor="message" className="label">
+                    <label htmlFor="message" className="mt-3 label">
                         Message
                     </label>
-                    <textarea name="message" id="message" placeholder="Hi!" required className="text-field">
+                    <textarea name="message" id="message" placeholder="Your Message Comes Here!" required className="text-field resize-y min-h-32 max-h-80">
 
                     </textarea>
                 </div>
 
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="mt-3 btn btn-primary [&]:max-w-full w-full justify-center">
                     Submit
                 </button>
 
