@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaWordpress, FaPaintBrush, FaPlug, FaLock, FaRocket, FaShoppingCart, FaSync, FaSearch, FaUsers } from "react-icons/fa/index.js";
+import { FaWordpress, FaPaintBrush, FaPlug, FaLock, FaRocket, FaShoppingCart, FaSync, FaSearch, FaUsers } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const services = [
