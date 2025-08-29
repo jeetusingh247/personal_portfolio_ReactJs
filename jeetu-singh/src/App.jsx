@@ -21,6 +21,7 @@ import Work from './components/Work';
 import Review from './components/Review';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WordPressServices from './components/WordPressServices';
 
 const App = () => {
 
@@ -44,12 +45,13 @@ const App = () => {
         <ReactLenis root>
         <Header />
         <main>
-            <Hero />
-            <About />
-            <Skill />
-            <Work />
-            <Review />
-            <Contact />
+                <Hero />
+                <About />
+                <WordPressServices />
+                <Skill />
+                <Work />
+                <Review />
+                <Contact />
         </main>
         <Footer />
         </ReactLenis>
