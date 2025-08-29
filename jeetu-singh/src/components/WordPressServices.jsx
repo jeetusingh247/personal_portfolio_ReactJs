@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaWordpress, FaPaintBrush, FaPlug, FaLock, FaRocket, FaShoppingCart, FaSync, FaSearch, FaUsers } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -34,13 +34,34 @@ const testimonials = [
   { name: "Rahul Singh", text: "The e-commerce integration was seamless.", avatar: "/images/people-3.jpg" }
 ];
 
-const packages = [
-  { name: "Starter", price: "₹9,999", features: ["1-5 pages", "Basic SEO", "Theme setup", "Support"] },
-  { name: "Business", price: "₹19,999", features: ["Up to 15 pages", "Custom design", "E-commerce", "SEO & Security", "Priority support"] },
-  { name: "Enterprise", price: "₹39,999+", features: ["Unlimited pages", "Custom plugins", "Advanced integrations", "Dedicated support"] }
+
+const estimatorServices = [
+  { key: "design", label: "Website Design", price: 4000 },
+  { key: "theme", label: "Theme Development", price: 3500 },
+  { key: "plugin", label: "Plugin Development", price: 3000 },
+  { key: "ecommerce", label: "E-commerce Integration", price: 5000 },
+  { key: "seo", label: "SEO Optimization", price: 2000 },
+  { key: "migration", label: "Migration & Maintenance", price: 1500 },
+  { key: "security", label: "Security Setup", price: 2500 },
+  { key: "performance", label: "Performance Optimization", price: 2000 }
 ];
 
+
+
 export default function WordPressServices() {
+  const [selected, setSelected] = useState([]);
+
+  const handleToggle = key => {
+    setSelected(prev =>
+      prev.includes(key) ? prev.filter(k => k !== key) : [...prev, key]
+    );
+  };
+
+  const total = selected.reduce(
+    (sum, key) => sum + (estimatorServices.find(s => s.key === key)?.price || 0),
+    0
+  );
+
   return (
     <section id="wordpress-services" className="py-20 bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 text-zinc-100">
       <div className="container mx-auto max-w-6xl px-4">
@@ -65,22 +86,6 @@ export default function WordPressServices() {
                 <div className="w-12 h-12 rounded-full bg-sky-400/20 flex items-center justify-center text-xl font-bold text-sky-400 mb-2 border-2 border-sky-400">{i + 1}</div>
                 <span className="font-semibold text-zinc-100 mb-1">{step.step}</span>
                 <span className="text-xs text-zinc-400 text-center">{step.desc}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-        {/* Packages */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-sky-400 mb-6 text-center">Packages</h3>
-          <div className="flex flex-col md:flex-row gap-8 justify-center">
-            {packages.map((pkg, i) => (
-              <motion.div key={pkg.name} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} className="bg-zinc-800/80 rounded-2xl p-6 shadow-xl border border-zinc-700 min-w-[220px] flex-1 hover:scale-105 transition-transform duration-300">
-                <h4 className="text-xl font-bold text-yellow-400 mb-2">{pkg.name}</h4>
-                <div className="text-2xl font-extrabold text-sky-400 mb-3">{pkg.price}</div>
-                <ul className="mb-2 text-sm text-zinc-300">
-                  {pkg.features.map(f => <li key={f} className="mb-1">• {f}</li>)}
-                </ul>
-                <button className="mt-2 px-4 py-2 rounded-lg bg-sky-400 text-zinc-900 font-bold hover:bg-yellow-400 transition-all">Book Now</button>
               </motion.div>
             ))}
           </div>
