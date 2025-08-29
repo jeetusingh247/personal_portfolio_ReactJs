@@ -69,8 +69,44 @@ const Hero = () => {
         }
     }, []);
 
+    // Custom cursor effect for Hero section
+    const cursorRef = useRef(null);
+    useEffect(() => {
+        const cursor = cursorRef.current;
+        const hero = heroRef.current;
+        if (!cursor || !hero) return;
+        const moveCursor = e => {
+            const rect = hero.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            cursor.style.left = `${x}px`;
+            cursor.style.top = `${y}px`;
+        };
+        const shrinkCursor = () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(0.6)';
+        };
+        const expandCursor = () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1.2)';
+        };
+        const resetCursor = () => {
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        };
+        hero.addEventListener('mousemove', moveCursor);
+        hero.addEventListener('mousedown', shrinkCursor);
+        hero.addEventListener('mouseup', expandCursor);
+        hero.addEventListener('mouseleave', resetCursor);
+        return () => {
+            hero.removeEventListener('mousemove', moveCursor);
+            hero.removeEventListener('mousedown', shrinkCursor);
+            hero.removeEventListener('mouseup', expandCursor);
+            hero.removeEventListener('mouseleave', resetCursor);
+        };
+    }, []);
+
     return (
-    <section id='home' className='pt-28 lg:pt-36 relative overflow-hidden' ref={heroRef}>
+    <section id='home' className='pt-28 lg:pt-36 relative overflow-hidden' ref={heroRef} style={{cursor: 'none'}}>
+        {/* Custom Cursor for Hero */}
+        <div ref={cursorRef} style={{position: 'absolute', top: 0, left: 0, width: 36, height: 36, pointerEvents: 'none', borderRadius: '50%', background: 'linear-gradient(135deg, #facc15 0%, #38bdf8 100%)', boxShadow: '0 2px 8px rgba(56,189,248,0.15)', zIndex: 50, transform: 'translate(-50%, -50%) scale(1)', transition: 'transform 0.18s cubic-bezier(.25,.8,.25,1)', mixBlendMode: 'difference'}}></div>
             {/* Animated background */}
             <div className="absolute inset-0 -z-10 animate-gradient bg-gradient-to-br from-sky-400/20 via-zinc-900/80 to-yellow-400/10"></div>
             <div className='container items-center lg:grid lg:grid-cols-2 lg:gap-10'>
