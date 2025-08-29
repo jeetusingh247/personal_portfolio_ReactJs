@@ -39,15 +39,15 @@ const Contact = () => {
     <section id="contact" className="section">
         <div className="container lg:grid lg:grid-cols-2 lg:items-stretch">
             <div className="mb-12 lg:mb-0 lg:flex lg:flex-col">
-                <h2 className="headline-2 lg:max-w-[12ch]">
+                <h2 className="headline-2 lg:max-w-[12ch] reveal-up">
                     Contact Me
                 </h2>
-                <p className="mt-8 text-zinc-400 mb-8 max-w-[50ch] lg:max-w-[30ch]">
+                <p className="mt-8 text-zinc-400 mb-8 max-w-[50ch] lg:max-w-[30ch] reveal-up">
                 "Looking to elevate your project to new heights? With a wealth of experience in full stack development and application design, I am here to bring your vision to life. Let's collaborate to achieve extraordinary results tailored to your unique needs. Contact me to get started today."
                 </p>
                 <div className="flex items-center gap-2 mt-auto">
                     {socialLinks.map(({ href, icon, alt }, key) => (
-                        <a key={key} href={href} target="_blank" className="w-12 h-12 grid place-items-center ring-inset ring-2 ring-zinc-50/5 rounded-lg transition-[background-color,color] hover:bg-zinc-50 hover:text-zinc-950">
+                        <a key={key} href={href} target="_blank" className="w-12 h-12 grid place-items-center ring-inset ring-2 ring-zinc-50/5 rounded-lg transition-[background-color,color] hover:bg-zinc-50 hover:text-zinc-950 active:bg-zinc-50/80 revel-up">
                             {icon}
                         </a>
                     ))}
@@ -57,31 +57,31 @@ const Contact = () => {
             <form action="https://getform.io/f/bgddnnya" method="POST" className="xl:pl-10 2xl:pl-20">
                 <div className="md:grid md:items-center md:grid-cols-2 md:gap-2">
                     <div className="mb-3">
-                        <label htmlFor="name" className="label">
+                        <label htmlFor="name" className="label reveal-up">
                             Name
                         </label>
-                        <input type="text" name="name" id="name" autoComplete="name" required placeholder="Full Name" className="text-field" />
+                        <input type="text" name="name" id="name" autoComplete="name" required placeholder="Full Name" className="text-field reveal-up" />
                     </div>
 
                     <div className="mb-3">
-                        <label htmlFor="email" className="label">
+                        <label htmlFor="email" className="label reveal-up">
                             Email
                         </label>
-                        <input type="email" name="email" id="email" autoComplete="email" required placeholder="email@example.com" className="text-field" />
+                        <input type="email" name="email" id="email" autoComplete="email" required placeholder="email@example.com" className="text-field reveal-up" />
                     </div>
 
                 </div>
 
                 <div className="">
-                    <label htmlFor="message" className="mt-3 label">
+                    <label htmlFor="message" className="mt-3 label reveal-up">
                         Message
                     </label>
-                    <textarea name="message" id="message" placeholder="Your Message Comes Here!" required className="text-field resize-y min-h-32 max-h-80">
+                    <textarea name="message" id="message" placeholder="Your Message Comes Here!" required className="text-field resize-y min-h-32 max-h-80 reveal-up">
 
                     </textarea>
                 </div>
 
-                <button type="submit" className="mt-3 btn btn-primary [&]:max-w-full w-full justify-center">
+                <button type="submit" className="mt-3 btn btn-primary [&]:max-w-full w-full justify-center reveal-up">
                     Submit
                 </button>
 
