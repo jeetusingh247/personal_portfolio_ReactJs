@@ -95,7 +95,7 @@ const Footer = () => {
             <img src="/images/logo_white.svg" width={40} height={40} alt="Logo" />
           </a>
           <p className="text-zinc-500 text-sm">
-            &copy; 2024 <span className="text-yellow-400">Jeetu Singh</span>. All rights reserved.
+            &copy; 2025 <span className="text-yellow-400">Jeetu Singh</span>. All rights reserved.
           </p>
         </div>
       </div>
