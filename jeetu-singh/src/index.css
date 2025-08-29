@@ -1,3 +1,25 @@
+/* Accessibility: Focus-visible outline for keyboard navigation */
+:focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 2px;
+}
+
+/* Custom Animated Cursor */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #facc15 0%, #38bdf8 100%);
+    box-shadow: 0 2px 8px rgba(56,189,248,0.15);
+    z-index: 9999;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.15s cubic-bezier(.25,.8,.25,1);
+    mix-blend-mode: difference;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,8 +29,64 @@
  * BASE
 \* ---------------------------------------------- */
 
+
 html {
-    scroll-behavior: smooth;
+        scroll-behavior: smooth;
+}
+
+body {
+        transition: background 0.5s, color 0.5s;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    background: #18181b;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #facc15 0%, #38bdf8 100%);
+    border-radius: 8px;
+}
+
+/* Glassmorphism Utility */
+.glass {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* 3D Card Effect */
+.card-3d {
+    perspective: 1200px;
+}
+.card-3d-inner {
+    transition: transform 0.5s cubic-bezier(.25,.8,.25,1);
+    will-change: transform;
+}
+.card-3d:hover .card-3d-inner {
+    transform: rotateY(12deg) scale(1.04);
+    box-shadow: 0 8px 32px 0 rgba(56,189,248,0.15), 0 1.5px 8px 0 rgba(250,204,21,0.12);
+}
+
+/* Dark/Light Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 100;
+    background: rgba(30,41,59,0.8);
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    color: #facc15;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: background 0.3s;
+}
+.theme-toggle:hover {
+    background: #facc15;
+    color: #18181b;
 }
 
 body {
@@ -61,6 +139,11 @@ body {
 
 .section {
     @apply pt-20 lg:pt-32 
+}
+
+.reveal-up {
+    @apply transition-all duration-700 ease-out;
+    /* Remove initial opacity/translate for better visibility */
 }
 
 
