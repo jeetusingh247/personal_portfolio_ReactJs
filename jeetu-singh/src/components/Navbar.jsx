@@ -15,12 +15,11 @@ const Navbar = ({navOpen}) => {
 
   
   const initActiveBox = () => {
-    // console.log(lastActiveLink.current);
-    // console.log(activeBox.current);
+    if (!activeBox.current || !lastActiveLink.current) return;
     activeBox.current.style.top = `${lastActiveLink.current.offsetTop}px`;
     activeBox.current.style.left = `${lastActiveLink.current.offsetLeft}px`;
     activeBox.current.style.width = `${lastActiveLink.current.offsetWidth}px`;
-    activeBox.current.style.height = `${lastActiveLink.current.offsetHeight}px`;   
+    activeBox.current.style.height = `${lastActiveLink.current.offsetHeight}px`;
   }
   
   const activeCurrentLink = (event) => {
@@ -55,8 +54,8 @@ const Navbar = ({navOpen}) => {
       className: 'nav-link'
     },
     {
-      label: 'Services',
-      link: '#services',
+      label: 'Reviews',
+      link: '#reviews',
       className: 'nav-link'
     },
     {
